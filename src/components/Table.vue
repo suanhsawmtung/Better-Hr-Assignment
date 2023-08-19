@@ -103,24 +103,5 @@ defineProps({
 </script>
 
 <style scoped>
-/* .scroll-box{
-    scrollbar-width: 5px;
-  scrollbar-color: #1ED292;
-} */
-/* Hide scrollbar for Chrome, Safari and Opera */
-/* .scroll-box::-webkit-scrollbar{
-    background-color: #1ED292;
-    background-color: transparent;
-    border-radius: 9999px;
-    width: 20px;
-    box-shadow: none;
-    color: #1ED292;
-} */
-
-/* Hide scrollbar for IE, Edge and Firefox */
-/* .scroll-box {
-  -ms-overflow-style: none;  
-  scrollbar-width: none; 
-} */
 
 </style>
