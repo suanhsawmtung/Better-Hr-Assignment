@@ -30,7 +30,7 @@
                     <td class="px-6 py-3.5 flex items-center gap-4">
                         <span class="w-6 h-6 inline-block overflow-hidden rounded-full">
                             <img 
-                                :src="'src/assets/images/' + employee.image"
+                                :src="'/public/images/' + employee.image"
                                 alt="" class="w-full h-full object-cover"
                             >
                         </span>
