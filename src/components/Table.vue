@@ -1,12 +1,12 @@
 <template>
     <div 
-        class="w-full flex ms-60 relative overflow-x-auto shadow-md sm:rounded-lg scroll-box"
+        class="w-full flex relative overflow-x-auto shadow-md sm:rounded-lg scroll-box"
     >
         <table 
             class="text-sm text-left text-gray-500 dark:text-gray-400 "
         >
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr class="border-b">
+                <tr class="border-y">
                     <th  scope="col" class="px-6 py-3">
                         <span class="w-40 inline-block">Location</span>
                     </th>
@@ -84,7 +84,7 @@
                         {{ employee.date }}
                     </td>
                     <td class="px-6 py-4">
-                        hello
+                        {{ employee.terminatedDate }}
                     </td>
                 </tr>
             </tbody>

@@ -4,7 +4,7 @@
             class="text-sm text-left text-gray-500 dark:text-gray-400 shadow-tiny border-b-4 border-hr"
         >
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr class="border-b">
+                <tr class="border-y">
                     <th scope="col" class="px-4 py-2">
                         <span class="w-6 inline-block">
                             <input type="checkbox" class="accent-hr" 
@@ -56,7 +56,10 @@ const ids = ref([]);
 
 const checkInput = id => {
     if(ids.value.includes(id)) ids.value = ids.value.filter(ID => ID !== id);
-    else ids.value.push(id);
+    else {
+        if(id === 0 && ids.value.length !== 0) ids.value = [];
+        else ids.value.push(id);
+    };
 };
 
 const imgSrc = src => "src/assets/images/" + src;

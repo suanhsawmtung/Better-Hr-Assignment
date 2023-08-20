@@ -55,8 +55,9 @@ const changePaginator = (num) => {
                 </div>
               </div>
             </div>
-            <div class="w-full mt-4 ps-6 relative">
+            <div class="w-full mt-5 ps-6 flex relative">
               <TinyTable :employees="mappedEmployees" />
+              <div class="w-80 h-full ms-2 bg-white"></div>
               <Table :employees="employees" />
             </div>
             <div class="w-full px-6 py-4 flex justify-end items-center gap-12">
