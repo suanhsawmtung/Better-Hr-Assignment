@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="w-full flex relative overflow-x-hidden shadow-md sm:rounded-lg scrollBox"
+        class="w-full flex relative overflow-x-hidden shadow-md scrollBox"
         @mousedown="mouseDown"
         @mousemove="mouseMove"
         @mouseup="mouseUp"
