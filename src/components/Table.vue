@@ -1,6 +1,10 @@
 <template>
     <div 
-        class="w-full flex relative overflow-x-auto shadow-md sm:rounded-lg scroll-box"
+        class="w-full flex relative overflow-x-hidden shadow-md sm:rounded-lg scrollBox"
+        @mousedown="mouseDown"
+        @mousemove="mouseMove"
+        @mouseup="mouseUp"
+        @mouseleave="mouseLeave"
     >
         <table 
             class="text-sm text-left text-gray-500 dark:text-gray-400 "
@@ -92,16 +96,42 @@
     </div>
 </template>
 
-<script setup>
-defineProps({
-    employees: {
-        required: true,
-        type: Object
+<script>
+    export default {
+        data() {
+            return {
+                isDown: false,
+                startX: 0,
+                scrollLeft: 0,
+            }
+        },
+        props: {
+            employees: {
+                required: true,
+                type: Object
+            }
+        },
+        methods: {
+            mouseDown(event) {
+                const slider = document.querySelector('.scrollBox');
+                this.isDown = true;
+                this.startX = event.pageX - slider.offsetLeft;
+                this.scrollLeft = slider.scrollLeft;
+            },
+            mouseLeave() {
+                this.isDown = false;
+            },
+            mouseUp() {
+                this.isDown = false;
+            },
+            mouseMove(event) {
+                if(!this.isDown) return;
+                const slider = document.querySelector('.scrollBox');
+                event.preventDefault();
+                const x = event.pageX - slider.offsetLeft;
+                const walk = x - this.startX;
+                slider.scrollLeft = this.scrollLeft - walk;
+            },
+        },
     }
-});
-
 </script>
-
-<style scoped>
-
-</style>
